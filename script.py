@@ -1,4 +1,4 @@
-# from ayx import Alteryx
+from ayx import Alteryx
 import re 
 import pandas as pd
 import os
@@ -22,11 +22,9 @@ for line in lines:
     if re.search(r"[ ]{2,}", line):
         line = re.sub(r"[ ]{2,}", ",", line)
     table_lines.append(line)
-    
-# print(table_lines)
 
 header = table_lines[0].split(",")
 data_rows = [row.split(",") for row in table_lines[:]]
 df = pd.DataFrame(data_rows)
-# df.to_csv(csv_file)
-# Alteryx.write(df,1)
+df.to_csv(csv_file)
+Alteryx.write(df,1)
