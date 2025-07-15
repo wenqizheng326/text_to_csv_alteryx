@@ -2,11 +2,9 @@
 import re 
 import pandas as pd
 import os
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
-
-print(os.getenv('OUTPUT_FILE'))
 
 text_file = os.getenv('INPUT_FILE')
 csv_file = os.getenv('OUTPUT_FILE')
